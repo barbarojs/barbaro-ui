@@ -1,5 +1,10 @@
+.gitignore
+.DS_Store
 .babelrc
 .editorconfig
+.eslintignore
 .eslintrc
 .stylelintrc
 .travis.yml
+karma.conf.js
+webpack.config.babel.js
