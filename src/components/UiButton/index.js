@@ -3,7 +3,7 @@ import {StreamComponent} from 'barbarojs-stream';
 import componentConstant from './constants.js';
 import style from './style.scss';
 
-class UiButton extends StreamComponent {
+class BUiButton extends StreamComponent {
 	constructor(props) {
 		super(props);
 	}
@@ -28,7 +28,7 @@ class UiButton extends StreamComponent {
 }
 
 export default {
-	component: UiButton,
+	component: BUiButton,
 	constants: componentConstant,
 	style
 };

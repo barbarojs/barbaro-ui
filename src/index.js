@@ -1,3 +1,1 @@
-import UiButton from './components/UiButton/index';
-
-export default UiButton;
+export BUiButton from './components/UiButton/index';

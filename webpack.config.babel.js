@@ -21,7 +21,9 @@ module.exports = {
 		publicPath: '/',
 		compress: false,
 		filename: 'bundle.js',
-		chunkFilename: 'bundle-[id].js'
+		chunkFilename: 'bundle-[id].js',
+		libraryTarget: "commonjs2",
+		library: "barbarojs-ui"
 	},
 
 	resolve: {
@@ -29,7 +31,7 @@ module.exports = {
 			path.resolve('./src')
 		],
 		extensions: [
-			'', '.jsx', '.js', '.json', '.scss'
+			'', '.jsx', '.js', '.scss'
 		],
 		modulesDirectories: [
 			path.resolve(__dirname, 'node_modules'),
@@ -48,34 +50,21 @@ module.exports = {
 			loader: 'source-map'
 		}],
 		loaders: [{
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				loader: 'babel'
-			},
-			{
-				test: /\.(scss|css)$/,
-				loaders: [
-					['css-loader?modules',
-						'localIdentName=[local]-[hash:base64:5]',
-						'importLoaders=1',
-						`sourceMap=${CSS_MAPS}`
-					].join('&'),
-					`sass-loader?sourceMap=${CSS_MAPS}`,
-					'postcss-loader?parser=postcss-scss'
-				]
-			},
-			{
-				test: /\.json$/,
-				loader: 'json'
-			}, {
-				test: /\.(xml|html|txt|md)$/,
-				loader: 'raw'
-			}, {
-				test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-				loader: ENV === 'production' ?
-					'file?name=[path][name]_[hash:base64:5].[ext]' : 'url'
-			}
-		]
+			test: /\.jsx?$/,
+			exclude: /node_modules/,
+			loader: 'babel-loader'
+		},
+		{
+			test: /\.(scss|css)$/,
+			loaders: [
+				['css-loader?modules',
+				'localIdentName=[local]-[hash:base64:5]',
+				'importLoaders=1',
+				`sourceMap=${CSS_MAPS}`].join('&'),
+				`sass-loader?sourceMap=${CSS_MAPS}`,
+				'postcss-loader?parser=postcss-scss'
+			] 
+		}]
 	},
 
 	postcss: () => [
