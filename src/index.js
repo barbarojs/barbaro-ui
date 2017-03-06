@@ -1,3 +1,5 @@
-import BUiButton from './components/UiButton/index';
+import BUIButton from './components/UiButton/';
 
-export default BUiButton;
+console.log("yes it changed bui");
+ 
+export default BUIButton;

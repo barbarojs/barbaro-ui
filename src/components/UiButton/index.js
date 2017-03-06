@@ -3,7 +3,9 @@ import {StreamComponent} from 'barbarojs-stream';
 import componentConstant from './constants.js';
 import style from './style.scss';
 
-class BUiButton extends StreamComponent {
+let className = style.locals;
+
+export default class BUIButton extends StreamComponent {
 	constructor(props) {
 		super(props);
 	}
@@ -18,17 +20,16 @@ class BUiButton extends StreamComponent {
 	}
 
 	render() {
+		console.log("style is here", className);
+		
 		return (
 			<button
-				class={ style.button }
+				class={ className.button }
 				onClick={evt => this.handleClick(evt)}
 			>{this.props.children}</button>
 		);
 	}
 }
 
-export default {
-	component: BUiButton,
-	constants: componentConstant,
-	style
-};
+BUIButton.constants = componentConstant;
+BUIButton.style = style;
