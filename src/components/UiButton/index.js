@@ -30,6 +30,3 @@ export default class BUIButton extends StreamComponent {
 		);
 	}
 }
-
-BUIButton.constants = componentConstant;
-BUIButton.style = style;
