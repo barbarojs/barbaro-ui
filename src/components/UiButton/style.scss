@@ -3,6 +3,6 @@ $buiButtonPrimary: green !default;
 .button {
 	border-radius: 4px;
 	font-size: 12px;
-	color: var(--UiButton-color, blue);
+	color: var(--UiButton-color, $theme-var);
 	background-color: $buiButtonPrimary;
 }

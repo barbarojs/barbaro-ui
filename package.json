@@ -81,6 +81,7 @@
     "postcss-scss": "^0.4.0",
     "raw-loader": "^0.5.1",
     "replace-bundle-webpack-plugin": "^1.0.0",
+    "sass-resources-loader": "1.0.2",
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0",
